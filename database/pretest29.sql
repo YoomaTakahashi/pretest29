@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Nov 04, 2026 at 03:10 AM
+-- Generation Time: Nov 05, 2026 at 03:46 AM
 -- Server version: 26.10.0
 -- PHP Version: 8.3.36
 
@@ -143,7 +143,8 @@ CREATE TABLE `tb_member` (
 --
 
 INSERT INTO `tb_member` (`id_member`, `fname`, `lname`, `username`, `password`, `email`, `role`, `pic_user`) VALUES
-(1, 'testman1', 'testman1', 'testman1', '$2b$10$bMQsiUMzSEhp036IZQGVDuWD8/08IrsBycSWZ53lwagxeGNsg8RG2', 'testman1@gmail.com', 'ผู้รับการประเมินผล', '1793694273498.jpg');
+(1, 'testman1', 'testman1', 'testman1', '$2b$10$bMQsiUMzSEhp036IZQGVDuWD8/08IrsBycSWZ53lwagxeGNsg8RG2', 'testman1@gmail.com', 'ผู้รับการประเมินผล', '1793694273498.jpg'),
+(52, 'testcom1', 'testcom1', 'testcom1', '$2b$10$19Nq1vmh2kE8an51seiJ4.F16pNkVqwaLTmJKaQXPxo7PwkZWpyQG', 'testcom1@gmail.com', 'กรรมการประเมิน', '1793849493093.png');
 
 -- --------------------------------------------------------
 
@@ -275,7 +276,7 @@ ALTER TABLE `tb_indicate`
 -- AUTO_INCREMENT for table `tb_member`
 --
 ALTER TABLE `tb_member`
-  MODIFY `id_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `tb_system`

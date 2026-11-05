@@ -8,7 +8,7 @@
                 <v-card elevation="5" rounded class="round py-5">
                     <center>
                         <nuxt-link to="/Evaluatee/Score_member"><v-btn color="green">ผลการประเมินของผู้รับการประเมินผล</v-btn></nuxt-link>&nbsp;&nbsp;
-                        <nuxt-link to="/Evaluatee/Score_member"><v-btn color="info">ผลการประเมินของกรรมการประเมิน</v-btn></nuxt-link>
+                        <nuxt-link to="/Evaluatee/Score_commit"><v-btn color="info">ผลการประเมินของกรรมการประเมิน</v-btn></nuxt-link>
                     </center>
                 </v-card>
             </v-col>

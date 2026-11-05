@@ -3,7 +3,7 @@
         <v-row>
             <v-col cols="12">
                 <v-form v-if="user.status_eva === 2 || user.status_eva === 3">
-                    <h1 class="font-weight-bold">แบบประเมินตนเอง</h1>
+                    <h1 class="font-weight-bold">ผลการประเมินของผู้รับการประเมินผล</h1>
                     <v-card elevation="5" rounded >
                         <p class="ms-2">คูณ : {{ user.fname }} {{ user.lname }}</p>
                         <p class="ms-2">รอบการประเมินที่ : {{ user.round_sys }} ปี {{ user.year_sys }}</p>
