@@ -57,7 +57,7 @@ router.get('/showE',verifyToken,requireRole('ฝ่ายบุคลากร')
     try {
 
         const [rows] = await db.query(`select * from tb_member where role='ผู้รับการประเมินผล' order by id_member`)
-        res.json(rows,{message:"get success"})
+        res.json(rows)
     } catch (error) {
         console.error("get error",error);
         res.status(500).json({message:"get error"})
@@ -70,7 +70,7 @@ router.get('/showC',verifyToken,requireRole('ฝ่ายบุคลากร')
     try {
 
         const [rows] = await db.query(`select * from tb_member where role='กรรมการประเมิน' order by id_member`)
-        res.json(rows,{message:"get success"})
+        res.json(rows)
     } catch (error) {
         console.error("get error",error);
         res.status(500).json({message:"get error"})

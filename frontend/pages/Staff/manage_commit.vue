@@ -78,9 +78,7 @@
 import axios from 'axios'
 import { api, staff } from '~/API/base'
 
-definePageMeta({
-    layout: false
-})
+
 const error = ref<Record<string,string>>({})
 const pic_user = ref<File | null>(null)
 const typeR = ['กรรมการประเมิน']
@@ -198,5 +196,5 @@ const del = async(id_member:number)=>{
 </script>
 
 <style scoped>
-
+    wow
 </style>

@@ -79,9 +79,7 @@
 import axios from 'axios'
 import { api, staff } from '~/API/base'
 
-definePageMeta({
-    layout: false
-})
+
 const error = ref<Record<string,string>>({})
 const seacrh = ref('')
 const dataResult = ref([])
