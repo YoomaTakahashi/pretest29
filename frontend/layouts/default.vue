@@ -5,7 +5,7 @@
             <v-toolbar-title class="font-weight-bold">NTC EVALUATION SYSTEM</v-toolbar-title>
 
             <p class="text-center">คุณ : {{ user.fname }} {{ user.lname }} <br> ตำแหน่ง : {{ user.role }}</p>
-            <v-btn variant="text" @click="logout" icon="mdi-logout"></v-btn>
+            <v-btn icon="mdi-logout" variant="text" @click="logout"></v-btn>
         </v-app-bar>
 
         <v-navigation-drawer app color="#404040" v-model="drawer" width="260" :temporary="isMobile" :permanent="!isMobile">
@@ -49,10 +49,10 @@ const {mdAndDown} = useDisplay()
 const isMobile = computed(()=> mdAndDown.value)
 
 const logout = ()=>{
-    if(confirm('ท่านต้องการออกจากระบบหรือไม่'))return
+    if(!confirm('ท่านต้องการออกจากระบบหรือไม่'))
     localStorage.removeItem('token')
     navigateTo('/',{replace:true})
-    window.location.reload()
+    
 }
 const roles = [
     //staff nav
