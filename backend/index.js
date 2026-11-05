@@ -30,6 +30,11 @@ app.use('/api/Eva/edit_eva',edit_eva)
 const score_member = require('./routes/Eva/score_member')
 app.use('/api/Eva/score_member',score_member)
 
+//----------------------------------------------commit api --------------------------------------------------------------\\
+
+const show_eva = require('./routes/Commit/show_eva')
+app.use('/api/Commit/show_eva',show_eva)
+
 app.use((req,res)=> res.status(404).json({message:"Route Not Found"}))
 app.listen(3001,()=>{
     console.log("Server Running on Port 3001");
