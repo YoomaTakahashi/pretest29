@@ -27,7 +27,7 @@
                             <td class="border text-center"><v-btn color="blue" class="text-white" size="smail" @click="check(items.id_eva)">ตรวจสอบ</v-btn></td>
                             <td class="border text-center">
                                 <v-btn v-if="items.signature" color="success" class="text-white" size="smail" @click="go(items.id_eva)">ยืนยันผลแล้ว</v-btn>
-                                <v-btn v-else color="blue" class="text-white" size="smail" @click="go(items.id_eva)">ตรวจสอบ</v-btn>
+                                <v-btn v-else color="blue" class="text-white" size="smail" @click="go(items.id_eva)">ยืนยันผล</v-btn>
                             </td>
                         </tr>
                         <tr>
@@ -59,10 +59,10 @@ const fetch = async () => {
 
 
 const go = (id_eva:number) => {
-    navigateTo({path:`/Committee/Score_commit${id_eva}`})
+    navigateTo({path:`/Committee/Signature/${id_eva}`})
 }
 const check = (id_eva:number) => {
-    navigateTo({path:`/Committee/Signature${id_eva}`})
+    navigateTo({path:`/Committee/Score_commit/${id_eva}`})
 }
 
 onMounted(fetch)

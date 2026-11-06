@@ -38,6 +38,18 @@ app.use('/api/Eva/score_commit',score_commit)
 
 const table = require('./routes/Eva/table')
 app.use('/api/Eva/table',table)
+//----------------------------------------------commit api --------------------------------------------------------------\\
+
+const show_eva = require('./routes/Commit/show_eva')
+app.use('/api/Commit/show_eva',show_eva)
+
+const check = require('./routes/Commit/check')
+app.use('/api/Commit/check',check)
+
+const score_commit2 = require('./routes/Commit/score_commit')
+app.use('/api/Commit/score_commit',score_commit2)
+
+
 
 app.use((req,res)=> res.status(404).json({message:"Route Not Found"}))
 app.listen(3001,()=>{
