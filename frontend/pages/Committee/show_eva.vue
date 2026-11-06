@@ -56,7 +56,7 @@ const fetch = async () => {
 
 
 const go = (id_eva:number) => {
-    navigateTo({path:`/Committee/Save_score${id_eva}`})
+    navigateTo({path:`/Committee/Save_Score${id_eva}`})
 }
 
 onMounted(fetch)
@@ -73,4 +73,6 @@ const formatDate = (dateStr:string)=>{
 
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

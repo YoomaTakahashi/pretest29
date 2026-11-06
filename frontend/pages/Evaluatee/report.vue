@@ -39,8 +39,8 @@
                             <v-row>
                                 <label for="">ข้อเสนอแนะของกรรมการ</label>
                                 <v-row>
-                                    <v-col cols="12" v-for="(commit,c) in commits" :key="commit.id_commit" >
-                                        <img :src="`/uploads/signature/${commit.signature}`" :alt="`รอ${commit.level_commit}ประเมิน`" width="20%" > <br>
+                                    <v-col cols="12" md="4" v-for="(commit,c) in commits" :key="commit.id_commit" >
+                                        <img  :src="`http://localhost:3001/uploads/signature/${commit.signature}`" :alt="`รอ${commit.level_commit}ประเมิน`" width="20%" > <br>
                                         {{ commit.fname }}-{{ commit.lname }} ตำแหน่ง : {{ commit.level_commit }}
                                     </v-col>
                                 </v-row>
@@ -48,7 +48,7 @@
                         </v-card>
                     </div>
                     <div class="mt-3 text-center">
-                        <v-btn color="warning" @click="print" prepend-icon="mdi-printer">พิมพ์</v-btn>
+                        <v-btn color="warning" @click="print" class="no-p" prepend-icon="mdi-printer">พิมพ์</v-btn>
                     </div>
                 </v-form>
                 <v-alert variant="tonal" type="warning" color="warning" v-else-if="user.status_eva === 1">ยังไม่ได้ประเมินตนเอง</v-alert>
@@ -118,5 +118,14 @@ onMounted(async()=>{
 <style scoped>
 .round{
     border-radius: 12px !important;
+}
+@media print {
+    .v-app-bar,.v-btn.no-p{
+        display: none !important;
+        margin: 0 !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
 }
 </style>

@@ -20,13 +20,13 @@
                                     <td class="text-center border text-h5">{{ indicate.detail_indicate }}</td>
                                     <td class="text-center border text-h5">{{ indicate.point_indicate }}</td>
                                     <td class="text-center border text-h5">{{ indicate.point_indicate*4 }}</td>
-                                    <td class="text-center border text-h5">{{ indicate.point_indicate*indicate.score_member }}</td>
+                                    <td class="text-center border text-h5">{{ indicate.point_indicate*indicate.score_commit }}</td>
                                 </tr> 
                             </v-table>
                         </v-col>
                     </v-row>
                     <div class="mt-3 text-end">
-                        <v-card color="green" class="pa-2" type="" >คะแนนรวม : {{ user.total_eva }} คะแนน</v-card>
+                        <v-card color="green" class="pa-2" type="" >คะแนนรวม : {{ user.total_commit }} คะแนน</v-card>
                     </div>
                 </v-form>
                 <v-alert variant="tonal" type="warning" color="warning" v-else-if="user.status_commit === 'n'">ยังไม่ได้ประเมินตนเอง</v-alert>
