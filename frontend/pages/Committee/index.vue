@@ -20,7 +20,7 @@
                             <td class="border text-center">{{ index + 1 }}</td>
                             <td class="border text-center">{{ items.fname }}</td>
                             <td class="border text-center">{{ items.lname }}</td>
-                            <td class="border text-center">{{ items.day_eva }}</td>
+                            <td class="border text-center">{{ formatDate(items.day_eva) }}</td>
                             <td class="border text-center"><v-btn color="blue" class="text-white" size="smail" @click="go(items.id_eva)">ตรวจสอบ</v-btn></td>
                         </tr>
                         <tr>
@@ -41,6 +41,16 @@ const token = import.meta.client ? localStorage.getItem('token') : null
 
 const result = ref ([])
 
+
+const formatDate = (dateStr:string)=>{
+    if(!dateStr)return '-'
+    const date = new Date(dateStr)
+    const day = String(date.getDate()).padStart(2,'0')
+    const month = String(date.getMonth()+1).padStart(2,'0')
+    const year = String(date.getFullYear())
+
+    return `${day}/${month}/${year}`
+}
 const fetch = async () => {
     try{
         const res = await axios.get(`${commit}/show_eva`,{headers:{Authorization:`Bearer ${token}`}})
