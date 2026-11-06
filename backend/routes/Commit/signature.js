@@ -19,7 +19,7 @@ router.post('/save/:id_eva',verifyToken,requireRole('กรรมการปร
         await file.mv(path.join(uploadDir,filename))
         await db.query(`update tb_commit set signature=? where id_member=? and id_eva=?`,[filename,id_member,id_eva])
 
-        const [SumCommit] = await db.query(`select * from tb_commit where status_commit=? and signature!=? and id_eva=?`,['y',null,id_eva])
+        const [SumCommit] = await db.query(`select * from tb_commit where status_commit=? and signature!='${null}' and id_eva=?`,['y',id_eva])
         if(SumCommit.length === 3){
             await db.query(`update tb_eva set status_eva=? where id_eva=? `,[3,id_eva])
         }
@@ -51,12 +51,12 @@ router.delete('/delete/:id_eva',verifyToken,requireRole('กรรมการ�
     
 })
 
-router.get('/show/:id_eva',verifyToken,requireRole('กรรมการประเมิน'),async (req,res) => {
+router.get('/:id_eva',verifyToken,requireRole('กรรมการประเมิน'),async (req,res) => {
     try {
         const id_member =req.user.id_member
         const id_eva = req.params.id_eva
-        const [rows] = await db.query(`select signature from tb_commit where id_member=? and id_eva=?`,[id_member,id_eva])
-        res.json(rows[0] || {})
+        const [rows] = await db.query(`select * from tb_commit where id_member=? and id_eva=?`,[id_member,id_eva])
+        res.json(rows[0])
     } catch (error) {
         console.error("get error",error);
         res.status(500).json({message:"get error"})

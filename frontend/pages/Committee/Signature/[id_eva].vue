@@ -97,7 +97,7 @@ const saveMember = async()=>{
 const fetch = async()=>{
     try {
         
-        const res = await axios.get(`${commit}/signature/show/${id_eva}`,{headers:{Authorization:`Bearer ${token}`}})
+        const res = await axios.get(`${commit}/signature/${id_eva}`,{headers:{Authorization:`Bearer ${token}`}})
         result.value = res.data
 
     } catch (error) {
@@ -116,7 +116,7 @@ const view = (file:string)=>{
 }
 
 
-const del = async(id_doc:number)=>{
+const del = async(id_eva:number)=>{
     if(!confirm('ต้องการลบข้อมูลชุดนี้ใช่หรือไม่'))return
     try {
         await axios.delete(`${commit}/signature/delete/${id_eva}`,{headers:{Authorization:`Bearer ${token}`}})
@@ -127,6 +127,7 @@ const del = async(id_doc:number)=>{
         
     }
 }
+onMounted(fetch)
 </script>
 
 <style scoped>
