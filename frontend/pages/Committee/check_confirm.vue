@@ -22,7 +22,7 @@
                             <td class="border text-center">{{ index + 1 }}</td>
                             <td class="border text-center">{{ items.fname }}</td>
                             <td class="border text-center">{{ items.lname }}</td>
-                            <td class="border text-center">{{ items.day_eva }}</td>
+                            <td class="border text-center">{{ formatDate(items.day_eva) }}</td>
                             <td class="border text-center">รอบการประเมินที่{{ items.round_sys }} ปี {{ year_sys }}</td>
                             <td class="border text-center"><v-btn color="blue" class="text-white" size="smail" @click="check(items.id_eva)">ตรวจสอบ</v-btn></td>
                             <td class="border text-center">
@@ -57,6 +57,15 @@ const fetch = async () => {
     }
 }
 
+const formatDate = (dateStr:string)=>{
+    if(!dateStr)return '-'
+    const date = new Date(dateStr)
+    const day = String(date.getDate()).padStart(2,'0')
+    const month = String(date.getMonth()+1).padStart(2,'0')
+    const year = String(date.getFullYear())
+
+    return `${day}/${month}/${year}`
+}
 
 const go = (id_eva:number) => {
     navigateTo({path:`/Committee/Signature/${id_eva}`})

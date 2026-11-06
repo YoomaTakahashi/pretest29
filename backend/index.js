@@ -22,6 +22,11 @@ app.use('/api/profile',profile)
 const dash = require('./routes/dash')
 app.use('/api/dash',dash)
 
+const docnoe = require('./routes/docnoe')
+app.use('/api/docnoe',docnoe)
+
+
+
 //----------------------------------------------eva api --------------------------------------------------------------\\
 
 const selfeva = require('./routes/Eva/selfeva')
@@ -48,6 +53,9 @@ app.use('/api/Commit/check',check)
 
 const score_commit2 = require('./routes/Commit/score_commit')
 app.use('/api/Commit/score_commit',score_commit2)
+
+const signature = require('./routes/Commit/signature')
+app.use('/api/Commit/signature',signature)
 
 
 
