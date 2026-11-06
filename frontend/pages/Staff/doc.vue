@@ -146,6 +146,7 @@ const del = async(id_doc:number)=>{
         
     }
 }
+onMounted(fetch)
 </script>
 
 <style scoped>

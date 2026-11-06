@@ -193,8 +193,9 @@ const del = async(id_member:number)=>{
         
     }
 }
+onMounted(fetch)
 </script>
 
 <style scoped>
-    wow
+
 </style>

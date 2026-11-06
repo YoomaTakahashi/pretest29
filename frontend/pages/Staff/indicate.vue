@@ -14,7 +14,7 @@
                                     <v-select label="หัวข้อการประเมิน" v-model="form.id_topic" :error-messages="error.id_topic" :items="topics.map((t)=>({title:t.name_topic,value:t.id_topic}))"></v-select>
                                 </v-col>
                                 <v-col cols="12" md="6">
-                                    <v-text-field label="ชื่อตัวชี้วัด" v-model="form.name_topic" :error-messages="error.name_topic" ></v-text-field>
+                                    <v-text-field label="ชื่อตัวชี้วัด" v-model="form.name_indicate" :error-messages="error.name_indicate" ></v-text-field>
                                 </v-col>
                                 <v-col cols="12" md="12">
                                     <v-textarea label="รายละเอียดตัวชี้วัด" v-model="form.detail_indicate" :error-messages="error.detail_indicate" rows="3"></v-textarea>
@@ -169,6 +169,8 @@ const del = async(id_indicate:number)=>{
         
     }
 }
+
+onMounted(fetch)
 </script>
 
 <style scoped>

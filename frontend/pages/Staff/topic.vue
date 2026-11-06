@@ -138,6 +138,7 @@ const del = async(id_topic:number)=>{
         
     }
 }
+onMounted(fetch)
 </script>
 
 <style scoped>
